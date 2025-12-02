@@ -7,8 +7,14 @@ import (
 )
 
 // ReadInput reads the entire input file for a given day
-func ReadInput(day int) string {
-	filename := fmt.Sprintf("inputs/day%02d.txt", day)
+func ReadInput(day int, test bool) string {
+	filename := ""
+	if test {
+		filename = fmt.Sprintf("inputs/day%02d-test.txt", day)
+	} else {
+
+		filename = fmt.Sprintf("inputs/day%02d.txt", day)
+	}
 	data, err := os.ReadFile(filename)
 	if err != nil {
 		panic(fmt.Sprintf("Error reading input file %s: %v", filename, err))
@@ -16,11 +22,11 @@ func ReadInput(day int) string {
 	return string(data)
 }
 
-// ReadLines reads the input file and returns it as a slice of lines
-func ReadLines(day int) []string {
-	input := ReadInput(day)
+// ReadInputs reads the input file and returns it as a slice of lines
+func ReadInputs(day int, separator string, test bool) []string {
+	input := ReadInput(day, test)
 	input = strings.TrimSpace(input)
-	return strings.Split(input, "\n")
+	return strings.Split(input, separator)
 }
 
 func Abs(x int) int {

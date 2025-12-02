@@ -2,6 +2,7 @@ package main
 
 import (
 	"aoc-go/solutions/day01"
+	"aoc-go/solutions/day02"
 	"fmt"
 	"os"
 	"strconv"
@@ -37,6 +38,8 @@ func runDay(day int) {
 	switch day {
 	case 1:
 		day01.Solve()
+	case 2:
+		day02.Solve()
 	default:
 		fmt.Printf("Day %d not implemented yet\n", day)
 	}
@@ -46,7 +49,7 @@ func runAll() {
 	fmt.Println("Running all implemented solutions...")
 	fmt.Println()
 
-	days := []int{1}
+	days := []int{1, 2}
 
 	for _, day := range days {
 		runDay(day)

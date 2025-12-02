@@ -7,7 +7,7 @@ import (
 )
 
 func Solve() {
-	lines := utils.ReadLines(1)
+	lines := utils.ReadInputs(1, "\n", false)
 	inputs := make([]int, 0, len(lines))
 
 	for _, val := range lines {
