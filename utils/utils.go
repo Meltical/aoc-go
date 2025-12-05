@@ -40,3 +40,10 @@ func Abs(x int) int {
 func Mod(a, b int) int {
 	return (a%b + b) % b
 }
+
+func Max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
