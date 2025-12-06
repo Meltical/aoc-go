@@ -47,3 +47,19 @@ func Max(a, b int) int {
 	}
 	return b
 }
+
+func Transpose[T any](A [][]T) [][]T {
+	N := len(A)
+	M := len(A[0])
+
+	AT := make([][]T, M)
+	for i := 0; i < M; i++ {
+		AT[i] = make([]T, N)
+	}
+	for i := 0; i < N; i++ {
+		for j := 0; j < M; j++ {
+			AT[j][i] = A[i][j]
+		}
+	}
+	return AT
+}
